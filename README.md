@@ -1,6 +1,9 @@
-# SimpleTax
+# Ruby gem for SimpleTax API
 
-Ruby gem for interacting with SimpleTax API
+SimpleTax (http://gosimpletax.com) is the free, web-based tax software that helps you easily find the most savings and ensures you file an accurate tax return, no matter how complicated your affairs are.
+
+This Ruby library allows you to integrate your application with SimpleTax via it's REST API. It relies on OAuth2 for authorising access to a user's account.
+
 
 ## Installation
 
@@ -24,6 +27,7 @@ require 'simpletax'
 simpletax = SimpleTax::Client.new redirect_url: 'YOUR_CALLBACK_URL', client_id: 'CLIENT_ID', client_secret: 'CLIENT_SECRET'
 simpletax.authorize_url
 # => "https://secure.gosimpletax.com/o/authorize/?client_id=CLIENT_ID&redirect_uri=YOUR_CALLBACK_URL&response_type=code"
+
 # Authorize it in the browser with the given url
 
 simpletax.fetch_token 'CODE_GOTTEN_FROM_THE_CALLBACK_URL'
